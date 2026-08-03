@@ -1,6 +1,7 @@
 package com.assignment.trainbookingsystem.dto;
 import lombok.Data;
 import java.util.UUID;
+@Data
 public class BookingRequest {
     private UUID userId;
     private UUID scheduleId;
