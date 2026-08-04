@@ -1,5 +1,4 @@
 package com.assignment.trainbookingsystem.service.impl;
-
 import com.assignment.trainbookingsystem.model.TrainSchedule;
 import com.assignment.trainbookingsystem.repository.TrainScheduleRepository;
 import com.assignment.trainbookingsystem.service.TrainScheduleService;
@@ -43,9 +42,17 @@ public class TrainScheduleServiceImpl implements TrainScheduleService {
 
     @Override
     public void deleteSchedule(UUID id) {
-        if (!trainScheduleRepository.existsById(id)) {
-            throw new IllegalArgumentException("Train schedule not found with ID: " + id);
-        }
-        trainScheduleRepository.deleteById(id);
+        TrainSchedule existingSchedule = getScheduleById(id);
+
+        // Soft delete: Just flip the flag and save it back
+        existingSchedule.setActive(false);
+        trainScheduleRepository.save(existingSchedule);
     }
+
+    @Override
+    public List<TrainSchedule> findAllByIsActiveTrue() {
+        return trainScheduleRepository.findAllByIsActiveTrue();
+    }
+
+
 }

@@ -1,5 +1,4 @@
 package com.assignment.trainbookingsystem.service.impl;
-
 import com.assignment.trainbookingsystem.dto.AvailableSeatDto;
 import com.assignment.trainbookingsystem.dto.BookingRequest;
 import com.assignment.trainbookingsystem.dto.BookingResponse;

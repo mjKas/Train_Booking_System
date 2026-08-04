@@ -1,5 +1,4 @@
 package com.assignment.trainbookingsystem.service.impl;
-
 import com.assignment.trainbookingsystem.model.User;
 import com.assignment.trainbookingsystem.repository.UserRepository;
 import com.assignment.trainbookingsystem.service.UserService;
@@ -44,7 +43,7 @@ public class UserServiceImpl implements UserService {
         existingUser.setEmail(userDetails.getEmail());
         existingUser.setMfaEnabled(userDetails.isMfaEnabled());
 
-        // Note: Password updates should ideally be handled in a separate method with hashing,
+        // Note: Password updates is handled in a separate method with hashing,
         // but this covers the basic profile details.
 
         return userRepository.save(existingUser);

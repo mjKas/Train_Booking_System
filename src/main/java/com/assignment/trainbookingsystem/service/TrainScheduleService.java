@@ -10,4 +10,5 @@ public interface TrainScheduleService {
     TrainSchedule getScheduleById(UUID id);
     TrainSchedule updateSchedule(UUID id, TrainSchedule scheduleDetails);
     void deleteSchedule(UUID id);
+    List<TrainSchedule> findAllByIsActiveTrue();
 }

@@ -22,4 +22,8 @@ public class TrainSchedule {
 
     @Column(name = "departure_time", nullable = false)
     private LocalDateTime departureTime;
+
+    @Column(name = "is_active", nullable = false)
+    @Builder.Default
+    private boolean isActive = true;
 }
